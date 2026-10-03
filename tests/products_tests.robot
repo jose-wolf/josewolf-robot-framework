@@ -37,6 +37,7 @@ Cenário 3: Validar detalhes da mochila e retorno à vitrine
 
 Cenário 4: Ordenar produtos do menor para o maior preço
     [Documentation]    Valida se a ordenação 'lohi' posiciona o item mais barato no topo.
+    ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Verificar se a página de produtos carregou
