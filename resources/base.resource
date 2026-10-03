@@ -1,7 +1,8 @@
 *** Settings ***
 
 Library    SeleniumLibrary
-Resource   pages/login_page.resource
+Resource    pages/login_page.resource
+Resource    pages/products_page.resource
 
 *** Keywords ***
 

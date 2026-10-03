@@ -1,11 +1,10 @@
 *** Settings ***
-
+Documentation    Teste na página de login.
 Resource         ../resources/base.resource
 Test Setup       Iniciar sessão de teste
 Test Teardown    Encerrar sessão de teste
 
 *** Test Cases ***
-
 Cenário 1: Realizar login com credenciais válidas
     [Documentation]    (cenário positivo)    Valida o acesso de um usuário padrão ao catálogo.
     Preencher credenciais de acesso    standard_user    secret_sauce
