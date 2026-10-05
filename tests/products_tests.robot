@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation    Testa na página de produtos no saucedemo.
+Documentation    Testes na página de Products no SauceDemo.
 Resource         ../resources/base.resource
 Test Setup       Iniciar sessão de teste
 Test Teardown    Encerrar sessão de teste

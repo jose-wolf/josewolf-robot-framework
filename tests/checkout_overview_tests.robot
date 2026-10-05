@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Testes da página Checkout: Overview (Resumo do Pedido) no SauceDemo.
+Documentation    Testes na página Checkout: Overview no SauceDemo.
 Resource         ../resources/base.resource
 Test Setup       Iniciar sessão de teste
 Test Teardown    Encerrar sessão de teste
@@ -7,6 +7,7 @@ Test Teardown    Encerrar sessão de teste
 *** Test Cases ***
 Cenário 1: Validar título da página, subtotal, taxa e valor total dos produtos
     [Documentation]    Adiciona Mochila ($29.99) e Bicicleta ($9.99) e valida se os cálculos do resumo estão corretos.
+    ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Adicionar a bicicleta ao carrinho
@@ -24,6 +25,7 @@ Cenário 1: Validar título da página, subtotal, taxa e valor total dos produto
 
 Cenário 2: Finalizar compra com sucesso e ir para a confirmação
     [Documentation]    Clica no botão Finish e valida o avanço para a página de pedido concluído.
+    ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Adicionar a mochila ao carrinho
@@ -37,6 +39,7 @@ Cenário 2: Finalizar compra com sucesso e ir para a confirmação
 
 Cenário 3: Cancelar pedido no overview e retornar à vitrine
     [Documentation]    Garante que o botão Cancel na tela de overview redireciona de volta para a vitrine de produtos.
+    ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Adicionar a mochila ao carrinho

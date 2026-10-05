@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation    Testes da página Checkout: Your Information no SauceDemo.
+Documentation    Testes na página de Checkout: Your Information no SauceDemo.
 Resource         ../resources/base.resource
 Test Setup       Iniciar sessão de teste
 Test Teardown    Encerrar sessão de teste
@@ -33,6 +33,7 @@ Cenário 2: Cancelar checkout e retornar ao carrinho
 
 Cenário Negativo 1: Validar erro ao submeter formulário sem First Name
     [Documentation]    Tenta continuar deixando o First Name em branco e valida a mensagem de erro.
+    ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Adicionar a mochila ao carrinho

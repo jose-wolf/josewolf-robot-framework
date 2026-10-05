@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation    Testes da página de carrinho (Your Cart) do SauceDemo.
+Documentation    Testes na página de Your Cart no SauceDemo.
 Resource    ../resources/base.resource
 Test Setup    Iniciar sessão de teste
 Test Teardown    Encerrar sessão de teste

@@ -6,6 +6,7 @@ Resource    pages/products_page.resource
 Resource    pages/cart_page.resource
 Resource    pages/checkout_page.resource
 Resource    pages/checkout_overview_page.resource
+Resource    pages/checkout_complete_page.resource
 
 *** Keywords ***
 
