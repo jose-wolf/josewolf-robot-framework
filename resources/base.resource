@@ -3,6 +3,7 @@
 Library    SeleniumLibrary
 Resource    pages/login_page.resource
 Resource    pages/products_page.resource
+Resource    pages/cart_page.resource
 
 *** Keywords ***
 

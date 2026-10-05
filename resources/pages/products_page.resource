@@ -13,6 +13,7 @@ ${DESCRIPTION_PRICE_LABS_BACKPACK}    css:[data-test="inventory-item-price"]
 ${BACK_TO_PAGE_PRODUCTS}    css:[data-test="back-to-products"] 
 ${SELECT_SORT}              css:[data-test="product-sort-container"]
 ${FIRST_ITEM_PRICE}      css:.inventory_item:first-child [data-test="inventory-item-price"]   
+${LINK_CARRINHO}    css:[data-test="shopping-cart-link"]
 
 *** Keywords ***
 
@@ -54,3 +55,7 @@ Validar menor preço exibido no primeiro produto
     [Arguments]    ${preco_esperado}
     Wait Until Element Is Visible    ${FIRST_ITEM_PRICE}
     Element Text Should Be           ${FIRST_ITEM_PRICE}    ${preco_esperado}
+
+Acessar o carrinho de compras
+    Wait Until Element Is Visible    ${LINK_CARRINHO}
+    Click Element                    ${LINK_CARRINHO}

@@ -15,6 +15,8 @@ Cenário 1: Adicionar um item e validar o contador
     Verificar se a página de produtos carregou
     Adicionar a mochila ao carrinho
     Validar contador no carrinho                1
+    Acessar o carrinho de compras
+
 
 Cenário 2: Adicionar múltiplos itens e conferir acumulação
     [Documentation]    Valida que mochila e bicicleta somam 2 itens no contador.
@@ -25,6 +27,7 @@ Cenário 2: Adicionar múltiplos itens e conferir acumulação
     Adicionar a mochila ao carrinho
     Adicionar a bicicleta ao carrinho
     Validar contador no carrinho                2
+    Acessar o carrinho de compras
 
 Cenário 3: Validar detalhes da mochila e retorno à vitrine
     [Documentation]    Acessa a descrição detalhada do produto, valida o preço de $29.99 e volta à página principal.
