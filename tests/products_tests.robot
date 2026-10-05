@@ -47,7 +47,7 @@ Cenário 4: Ordenar produtos do menor para o maior preço
     Ordenar produtos do menor ao maior valor    lohi
     Validar menor preço exibido no primeiro produto    $7.99
 
-Cenário Negativo: Bloquear acesso direto ao catálogo sem login
+Cenário 5: Bloquear acesso direto ao catálogo sem login
     [Documentation]    Garante que a rota /inventory.html exige autenticação prévia.
     ...    - Cenário negativo
     Tentar acessar a página dos produtos diretamente
