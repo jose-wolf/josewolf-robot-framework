@@ -14,6 +14,9 @@ ${BACK_TO_PAGE_PRODUCTS}    css:[data-test="back-to-products"]
 ${SELECT_SORT}              css:[data-test="product-sort-container"]
 ${FIRST_ITEM_PRICE}      css:.inventory_item:first-child [data-test="inventory-item-price"]   
 ${LINK_CARRINHO}    css:[data-test="shopping-cart-link"]
+${INVENTORY_URL}             https://www.saucedemo.com/inventory.html
+${ROUTE_ERROR_CONTAINER}     css:[data-test="error"]
+${INVENTORY_AUTH_ERROR_MSG}  Epic sadface: You can only access '/inventory.html' when you are logged in.
 
 *** Keywords ***
 
@@ -59,3 +62,10 @@ Validar menor preço exibido no primeiro produto
 Acessar o carrinho de compras
     Wait Until Element Is Visible    ${LINK_CARRINHO}
     Click Element                    ${LINK_CARRINHO}
+
+Tentar acessar a página dos produtos diretamente
+    Go To                            ${INVENTORY_URL}
+
+Validar bloqueio na sessão Products por falta de autenticação
+    Wait Until Element Is Visible    ${ROUTE_ERROR_CONTAINER}
+    Element Text Should Be           ${ROUTE_ERROR_CONTAINER}    ${INVENTORY_AUTH_ERROR_MSG}

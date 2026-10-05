@@ -9,7 +9,10 @@ ${BTN_REMOVE_BACKPACK}    css:[data-test="remove-sauce-labs-backpack"]
 ${BTN_REMOVE_BIKE}    css:[data-test="remove-sauce-labs-bike-light"]
 ${BTN_CONTINUE_SHOPPING}    css:[data-test="continue-shopping"]
 ${BTN_CHECKOUT}    css:[data-test="checkout"]
-${BADGE_CARRINHO}    css:[data-test="shopping-cart-badge"]
+${BADGE_CART}    css:[data-test="shopping-cart-badge"]
+${CART_URL}                  https://www.saucedemo.com/cart.html
+${ROUTE_ERROR_CONTAINER}     css:[data-test="error"]
+${CART_AUTH_ERROR_MSG}       Epic sadface: You can only access '/cart.html' when you are logged in.
 
 
 *** Keywords ***
@@ -45,4 +48,11 @@ Clicar em checkout
     Click Button                     ${BTN_CHECKOUT}
 
 Validar que o carrinho está vazio
-    Wait Until Page Does Not Contain Element    ${BADGE_CARRINHO}
+    Wait Until Page Does Not Contain Element    ${BADGE_CART}
+
+Tentar acessar a página do carrinho diretamente
+    Go To                            ${CART_URL}
+
+Validar bloqueio na sessão Cart por falta de autenticação
+    Wait Until Element Is Visible    ${ROUTE_ERROR_CONTAINER}
+    Element Text Should Be           ${ROUTE_ERROR_CONTAINER}    ${CART_AUTH_ERROR_MSG}

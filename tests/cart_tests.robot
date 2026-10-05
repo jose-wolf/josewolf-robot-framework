@@ -65,5 +65,8 @@ Cenário 4: Retornar à vitrine através do Continue Shopping
     Clicar em continuar comprando
     Verificar se a página de produtos carregou
 
-
-
+Cenário 5: Bloquear acesso direto à rota do carrinho sem login
+    [Documentation]    Garante que a rota privada /cart.html exige login ativo conforme requisitos de segurança.
+    ...    - Cenário negativo
+    Tentar acessar a página do carrinho diretamente
+    Validar bloqueio na sessão Cart por falta de autenticação
