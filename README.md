@@ -25,10 +25,16 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-- Windows
+- Windows no powershell
 ```Bash
 python -m venv .venv
 .venv\Scripts\activate
+```
+
+- Windows no Git Bash
+```
+python -m venv .venv
+source .venv/Scripts/activate
 ```
 
 3. Instalar as dependências
