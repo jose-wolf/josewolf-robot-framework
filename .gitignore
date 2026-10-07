@@ -9,3 +9,4 @@ results/
 *.html
 *.xml
 *.png
+!docs/images/report.png
