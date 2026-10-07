@@ -4,9 +4,9 @@ Este projeto contém testes automatizados de interface (UI) da aplicação [Sauc
 
 ## Tecnologias e Ferramentas utilizadas
 
-- **Linguagem**: Python 3.12
-- **Navegador**: Mozilla Firefox
-- **Framework de Automatização**: Robot Framework v7.5
+- **Linguagem:** Python 3.12
+- **Navegador:** Mozilla Firefox
+- **Framework de Automação:** Robot Framework v7.5
 - **Biblioteca:** SeleniumLibrary
 
 ## Estrutura do projeto
@@ -33,8 +33,8 @@ josewolf-robot-framework/
 └── README.md
 ```
 
-- **resources/base.resource**: centraliza os recursos utilizados pelas suítes e o início/fim das sessões de teste.
-- **resources/pages/**: contém as keywords e elementos relacionados a cada página da aplicação.
+- **resources/base.resource:** centraliza os recursos utilizados pelas suítes e o início/fim das sessões de teste.
+- **resources/pages/**: contém as keywords e os elementos relacionados a cada página da aplicação.
 - **tests/**: contém as suítes e os cenários de teste automatizados.
 - **requirements.txt:** contém as dependências necessárias para executar o projeto.
 
@@ -49,46 +49,53 @@ Antes de executar o projeto, é necessário ter instalado:
 
 ## Como executar o projeto
 
-1. Clonar o repositório
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/jose-wolf/josewolf-robot-framework.git
 cd josewolf-robot-framework
 ```
 
-2. Criar e Ativar o ambiente Virtual (`.venv`)
-- Linux
-```Bash
+### 2. Criar e ativar o ambiente virtual
+
+#### Linux
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-- Windows no powershell
-```Bash
+#### Windows — PowerShell
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-- Windows no Git Bash
-```
+#### Windows — Git Bash
+
+```bash
 python -m venv .venv
 source .venv/Scripts/activate
 ```
 
-3. Instalar as dependências
-```Bash
+### 3. Instalar as dependências
+
+```bash
 pip install -r requirements.txt
 ```
 
-4.  Executando os testes
+### 4. Executar os testes
 
-- Executar todos os testes:
-```Bash
+Para executar todos os testes:
+
+```bash
 robot -d results tests/
 ```
 
-- Executar apenas uma suíte específica
-```Bash
+Para executar somente uma suíte específica:
+
+```bash
 robot -d results tests/login_tests.robot
 ```
 
@@ -98,17 +105,17 @@ robot -d results tests/login_tests.robot
 
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
-| LOGIN-001 | Login com credenciais válidas | Positivo | Usuário acessa a página de produtos |
-| LOGIN-002 | Login com senha incorreta | Negativo | Sistema exibe mensagem de erro de autenticação |
-| LOGIN-003 | Login sem username | Negativo | Sistema informa que o username é obrigatório |
-| LOGIN-004 | Login sem password | Negativo | Sistema informa que o password é obrigatório |
+| LOGIN-001 | Realizar login com credenciais válidas | Positivo | Usuário acessa a página de produtos |
+| LOGIN-002 | Realizar login com senha incorreta | Negativo | Sistema exibe mensagem de erro de autenticação |
+| LOGIN-003 | Realizar login sem username | Negativo | Sistema informa que o username é obrigatório |
+| LOGIN-004 | Realizar login sem password | Negativo | Sistema informa que o password é obrigatório |
 
 ### Produtos
 
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
 | PROD-001 | Adicionar um item ao carrinho | Positivo | Contador do carrinho é atualizado para 1 |
-| PROD-002 | Adicionar múltiplos itens | Positivo | Contador do carrinho é atualizado para 2 |
+| PROD-002 | Adicionar múltiplos itens ao carrinho | Positivo | Contador do carrinho é atualizado para 2 |
 | PROD-003 | Visualizar detalhes de um produto | Positivo | Informações e preço do produto são exibidos corretamente |
 | PROD-004 | Ordenar produtos do menor para o maior preço | Positivo | Produto de menor preço aparece primeiro |
 | PROD-005 | Acessar catálogo diretamente sem login | Negativo | Sistema bloqueia o acesso e exige autenticação |
@@ -118,8 +125,8 @@ robot -d results tests/login_tests.robot
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
 | CART-001 | Validar produtos adicionados ao carrinho | Positivo | Produtos selecionados aparecem no carrinho |
-| CART-002 | Remover um produto do carrinho | Positivo | Produto é removido e contador é atualizado |
-| CART-003 | Remover todos os produtos | Positivo | Carrinho fica vazio |
+| CART-002 | Remover um produto do carrinho | Positivo | Produto é removido e o contador é atualizado |
+| CART-003 | Remover todos os produtos do carrinho | Positivo | Carrinho fica vazio |
 | CART-004 | Retornar à vitrine pelo Continue Shopping | Positivo | Usuário retorna à página de produtos |
 | CART-005 | Acessar carrinho diretamente sem login | Negativo | Sistema bloqueia o acesso |
 
@@ -127,19 +134,19 @@ robot -d results tests/login_tests.robot
 
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
-| CHECKOUT-001 | Avançar com dados válidos | Positivo | Usuário é direcionado para Checkout Overview |
+| CHECKOUT-001 | Avançar com dados válidos | Positivo | Usuário é direcionado para Checkout: Overview |
 | CHECKOUT-002 | Cancelar checkout | Positivo | Usuário retorna ao carrinho |
 | CHECKOUT-003 | Continuar sem First Name | Negativo | Sistema informa que First Name é obrigatório |
 | CHECKOUT-004 | Continuar sem Last Name | Negativo | Sistema informa que Last Name é obrigatório |
 | CHECKOUT-005 | Continuar sem Postal Code | Negativo | Sistema informa que Postal Code é obrigatório |
-| CHECKOUT-006 | Continuar com formulário vazio | Negativo | Sistema apresenta erro de campo obrigatório |
+| CHECKOUT-006 | Continuar com formulário vazio | Negativo | Sistema apresenta mensagem de campo obrigatório |
 | CHECKOUT-007 | Acessar checkout diretamente sem login | Negativo | Sistema bloqueia o acesso |
 
 ### Checkout — Overview
 
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
-| OVERVIEW-001 | Validar subtotal, taxa e total | Positivo | Valores calculados são apresentados corretamente |
+| OVERVIEW-001 | Validar subtotal, taxa e valor total | Positivo | Valores calculados são apresentados corretamente |
 | OVERVIEW-002 | Finalizar uma compra | Positivo | Usuário é direcionado para a confirmação do pedido |
 | OVERVIEW-003 | Cancelar pedido no overview | Positivo | Usuário retorna à página de produtos |
 | OVERVIEW-004 | Acessar overview diretamente sem login | Negativo | Sistema bloqueia o acesso |
@@ -148,5 +155,42 @@ robot -d results tests/login_tests.robot
 
 | ID | Cenário | Tipo | Resultado esperado |
 | --- | --- | --- | --- |
-| COMPLETE-001 | Validar confirmação da compra e retornar à home | Positivo | Mensagem de sucesso é exibida e usuário retorna aos produtos |
-| COMPLETE-002 | Acessar confirmação diretamente sem login | Negativo | Sistema bloqueia o acesso |
+| COMPLETE-001 | Validar confirmação da compra e retornar à vitrine | Positivo | Mensagem de sucesso é exibida e usuário retorna aos produtos |
+| COMPLETE-002 | Acessar página de confirmação diretamente sem login | Negativo | Sistema bloqueia o acesso |
+
+## Relatórios
+
+Após a execução dos testes, o Robot Framework gera os arquivos de resultado na pasta `results/`.
+
+Os principais arquivos são:
+
+- `results/report.html`: apresenta o resumo da execução dos testes.
+- `results/log.html`: apresenta os detalhes das suítes, cenários e keywords executadas.
+- `results/output.xml`: contém os resultados da execução em formato XML.
+
+Para visualizar os resultados, abra `report.html` ou `log.html` em um navegador.
+
+## Evidência de execução
+
+A suíte completa possui atualmente **27 testes automatizados**.
+
+Resultado da última execução:
+
+- **27 testes executados**
+- **27 testes aprovados**
+- **0 testes reprovados**
+
+![Relatório de execução dos testes](docs/images/report.png)
+
+## Próximos passos
+
+- Expandir a cobertura de testes automatizados.
+- Adicionar novos cenários conforme a aplicação evoluir.
+- Avaliar novos fluxos e casos negativos.
+- Evoluir a execução do projeto em diferentes ambientes.
+
+## Autor
+
+**José Wolf**
+
+[LinkedIn](COLOQUE-AQUI-A-URL-CORRETA-DO-SEU-LINKEDIN)
