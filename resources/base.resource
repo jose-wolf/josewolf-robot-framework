@@ -11,7 +11,7 @@ Resource    pages/checkout_complete_page.resource
 *** Keywords ***
 
 Iniciar sessão de teste
-    Open Browser    ${LOGIN_URL}    firefox    options=binary_location="${LOGIN_FIREFOX_BIN}"
+    Open Browser    ${LOGIN_URL}    firefox  
     Maximize Browser Window
 
 Encerrar sessão de teste
