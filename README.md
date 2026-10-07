@@ -193,4 +193,4 @@ Resultado da última execução:
 
 **José Wolf**
 
-[LinkedIn](COLOQUE-AQUI-A-URL-CORRETA-DO-SEU-LINKEDIN)
+[LinkedIn](https://www.linkedin.com/in/jose-wolf/)
