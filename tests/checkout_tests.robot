@@ -31,9 +31,9 @@ Cenário 2: Cancelar checkout e retornar ao carrinho
     Clicar no botão cancelar
     Verificar se está na página do carrinho
 
-Cenário Negativo 1: Validar erro ao submeter formulário sem First Name
+Cenário 3: Validar erro ao submeter formulário sem First Name
     [Documentation]    Tenta continuar deixando o First Name em branco e valida a mensagem de erro.
-    ...    - Cenário positivo
+    ...    - Cenário negativo
     Preencher credenciais de acesso             standard_user    secret_sauce
     Submeter formulário de login
     Adicionar a mochila ao carrinho
@@ -44,7 +44,7 @@ Cenário Negativo 1: Validar erro ao submeter formulário sem First Name
     Clicar no botão continuar
     Verificar mensagem de erro no checkout      ${MSG_ERROR_FIRST_NAME}
 
-Cenário 2: Validar erro ao submeter formulário sem Last Name
+Cenário 4: Validar erro ao submeter formulário sem Last Name
     [Documentation]    Tenta continuar deixando o Last Name em branco e valida a mensagem de erro.
     ...    - Cenário negativo
     Preencher credenciais de acesso             standard_user    secret_sauce
@@ -57,7 +57,7 @@ Cenário 2: Validar erro ao submeter formulário sem Last Name
     Clicar no botão continuar
     Verificar mensagem de erro no checkout      ${MSG_ERROR_LAST_NAME}
 
-Cenário 3: Validar erro ao submeter formulário sem Zip/Postal Code
+Cenário 5: Validar erro ao submeter formulário sem Zip/Postal Code
     [Documentation]    Tenta continuar deixando o Postal Code em branco e valida a mensagem de erro.
     ...    - Cenário negativo
     Preencher credenciais de acesso             standard_user    secret_sauce
@@ -70,7 +70,7 @@ Cenário 3: Validar erro ao submeter formulário sem Zip/Postal Code
     Clicar no botão continuar
     Verificar mensagem de erro no checkout      ${MSG_ERROR_POSTAL_CODE}
 
-Cenário Negativo 4: Validar erro ao submeter formulário totalmente vazio
+Cenário 6: Validar erro ao submeter formulário totalmente vazio
     [Documentation]    Tenta continuar com todos os campos em branco e valida a mensagem do primeiro campo obrigatório.
     ...    - Cenário negativo
     Preencher credenciais de acesso             standard_user    secret_sauce
@@ -83,7 +83,7 @@ Cenário Negativo 4: Validar erro ao submeter formulário totalmente vazio
     Clicar no botão continuar
     Verificar mensagem de erro no checkout      ${MSG_ERROR_FIRST_NAME}
 
-Cenário 5: Bloquear acesso direto à página de checkout sem autenticação
+Cenário 7: Bloquear acesso direto à página de checkout sem autenticação
     [Documentation]    Garante que a rota /checkout-step-one.html exige autenticação prévia.
     ...    - Cenário negativo
     Tentar acessar a página de checkout diretamente

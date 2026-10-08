@@ -38,7 +38,7 @@ Cenário 2: Remove um produto do carrinho e atualiza contador
     Validar que a bicicleta não está no carrinho
     Validar contador no carrinho    1
 
-Cenário 3: Remove todos os protudos do carrinho e verificar contador
+Cenário 3: Remove todos os produtos do carrinho e verificar contador
     [Documentation]    Valida a remoção dos produtos e verifica o contador
     ...    - Cenário positivo
     Preencher credenciais de acesso             standard_user    secret_sauce
