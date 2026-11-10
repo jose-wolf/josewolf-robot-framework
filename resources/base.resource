@@ -8,10 +8,14 @@ Resource    pages/checkout_page.resource
 Resource    pages/checkout_overview_page.resource
 Resource    pages/checkout_complete_page.resource
 
+*** Variables ***
+
+${BROWSER}    firefox
+
 *** Keywords ***
 
 Iniciar sessão de teste
-    Open Browser    ${LOGIN_URL}    firefox  
+    Open Browser    ${LOGIN_URL}    ${BROWSER}  
     Maximize Browser Window
 
 Encerrar sessão de teste
