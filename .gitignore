@@ -10,3 +10,4 @@ results/
 *.xml
 *.png
 !docs/images/report.png
+.vscode/

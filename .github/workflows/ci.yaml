@@ -1,0 +1,41 @@
+name: Testes Web (UI) - SauceDemo
+
+on:
+ push:
+  branches: [main]
+ pull_request:
+  branches: [main]
+workflow_dispatch:
+
+jobs:
+ executar-testes-web:
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: 1. Baixar o código do repositório
+     uses: actions/checkout@v7
+   
+   - name: 2. Configurar o Python 3.14
+     uses: actions/setup-python@v7
+     with:
+      python-version: '3.14'
+      cache: 'pip'
+      
+   - name: 3. Instalar o navegador Mozilla Firefox
+     uses: browser-actions/setup-firefox@v1
+      
+   - name: 4. Instalar as bibliotecas do projeto
+     run: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+      
+   - name: 5. Executar os testes em modo Headless (sem tela)
+     run: robot -d results -v BROWSER:headlessfirefox tests/
+      
+   - name: 6. Publicar o relatório de testes (Artifact)
+     if: always()
+     uses: actions/upload-artifact@v7
+     with:
+      name: relatorio-testes-web
+      path: results/
+      retention-days: 30
